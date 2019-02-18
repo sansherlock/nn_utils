@@ -21,6 +21,7 @@ x = np.random.rand(5,m)
 y = np.random.randint(0,cla,m)
 y = one_hot(y,cla,m)
 weights = init_weights(layer,layer_num)
+
 for i in range(500):
     output,catches = forwardprop(x,weights,layer_num)
     cost = cost_func_cross_entropy(output,y,m)
