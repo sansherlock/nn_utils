@@ -51,6 +51,7 @@ def backprop(output,y,weights,catches,layer_num):
         weights_derivatives['db'+str((layer_num-2)-l)] = delta
         weights_derivatives['dw'+str((layer_num-2)-l)] = np.dot(delta, catches['A'+str((layer_num-2)-l-1)].transpose())
     return weights_derivatives
+    
 def update_weights(weights,weights_derivatives,learning_rate,layer_num):
     for i in range(layer_num-1):
         weights['w'+str(i+1)] = weights['w'+str(i+1)] - learning_rate * weights_derivatives['dw'+str(i+1)]
